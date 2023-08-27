@@ -16,17 +16,17 @@ public class SelectionSort {
             }
             int min = Collections.min(tmpList);
             int pos = list.indexOf(min);
-            swap(pos, j);
+            if(!list.get(j).equals(list.get(pos))) {
+                swap(pos, j);
+            }
         }
     }
 
     private static void swap(int pos, int i) {
-        if(!list.get(i).equals(list.get(pos))) {
-            int swap = list.get(i);
-            list.set(i,list.get(pos));
-            list.set(pos, swap);
-            System.out.println(list);
-        }
+        int swap = list.get(i);
+        list.set(i,list.get(pos));
+        list.set(pos, swap);
+        System.out.println(list);
     }
 
     private static void showHeader() {
